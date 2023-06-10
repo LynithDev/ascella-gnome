@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.ascella-gnome" path="/org/gnome/shell/extensions/ascella-gnome/">
+    <key name="upload" type="b">
+        <default>false</default>
+        <summary>Upload to Ascella</summary>
+        <description>Upload to Ascella</description>
+    </key>
+    <key name="ascella-bin" type="s">
+        <default>'/usr/bin/ascella'</default>
+        <summary>Ascella binary</summary>
+        <description>Ascella binary</description>
+    </key>
+  </schema>
+</schemalist>

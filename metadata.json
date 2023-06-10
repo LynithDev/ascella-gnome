@@ -1,0 +1,13 @@
+{
+    "name": "Ascella GNOME Hook",
+    "description": "Hook which allows for ascella.host integration with GNOME's screenshot tool",
+    "uuid": "ascella-gnome@lynith.dev",
+    "url": "",
+    "settings-schema": "org.gnome.shell.extensions.ascella-gnome",
+    "version": 1,
+    "shell-version": [
+        "44",
+        "43",
+        "42"
+    ]
+}
