@@ -40,13 +40,25 @@ var ScreenshotUIHook = class ScreenshotUIHook {
                 this._ascellaHookInit = true;
             }
 
-            this._originalOpen();
+            return this._originalOpen();
         }
     }
     
     disable() {
-        ScreenshotUI.prototype.open = ScreenshotUI.prototype._originalOpen;
-        ScreenshotUI.prototype._originalOpen = null;
+        if (ScreenshotUI.prototype._originalOpen) {
+            ScreenshotUI.prototype.open = function () {
+                this._showPointerButtonContainer.remove_child(this._useAscellaButton);
+                this._useAscellaButton.destroy();
+
+                ScreenshotUI.prototype.open = this._originalOpen;
+                delete this._useAscellaButton;
+                delete this._useAscella;
+                delete this._ascellaHookInit;
+                delete this._originalOpen;
+
+                return this.open();
+            }
+        };
     }
 
 }
